@@ -11,7 +11,7 @@ print("Exists:", os.path.exists(image_path))
 
 # Try opening image
 # img = Image.open(image_path)
-img = Image.open('../data/test_image.png')
+img = Image.open('../data/text_training/test_image.png')
 img.verify()
 print("Image opened successfully")
 

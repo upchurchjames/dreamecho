@@ -30,3 +30,5 @@ for x in img_ds:
     print(x)
     image = x.numpy().astype(np.uint8)
     plt.imshow(image)
+    plt.show()
+    input('Press any key to continue')
