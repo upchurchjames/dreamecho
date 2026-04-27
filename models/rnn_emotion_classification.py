@@ -1,6 +1,7 @@
 
 from json.decoder import NaN
 from keras.src.layers import LSTM, Dropout
+import pickle
 from sklearn.model_selection import train_test_split
 
 from Utils import util
@@ -72,3 +73,10 @@ model.summary()
 train_data, test_data = train_test_split(data, test_size=0.2, random_state=42)
 
 model.fit(X, y, epochs=100, batch_size=32, verbose=1, validation_split=0.2)
+
+with open('../modelPkg/emotion_classifier_rnn.pkl', 'wb') as f:
+    pickle.dump(model, f)
+
+with open('../modelPkg/emotion_classifier_rnn.pkl', 'rb') as f:
+    loaded_model = pickle.load(f)
+

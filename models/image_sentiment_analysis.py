@@ -1,4 +1,4 @@
-
+import pickle
 import tensorflow as tf
 import pandas as pd
 from keras import layers, models
@@ -71,3 +71,7 @@ model.fit(
     epochs=10,
     verbose=1
 )
+
+with open('../modelPkg/emotion_classifier_cnn.pkl', 'wb') as f:
+    pickle.dump(model, f)
+
